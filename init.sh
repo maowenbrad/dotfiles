@@ -22,6 +22,12 @@ brew install go-task
 # Install Chezmoi
 brew install chezmoi
 
+# Generate ssh key
+ssh-keygen -t ed25519 -C "maowenbrad" -f ~/.ssh/id_maowenbrad 
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_maowenbrad
+cat ~/.ssh/id_maowenbrad.pub
+
 # Run Chezmoi init
 chezmoi init --apply git@github.com:$GITHUB_USERNAME/dotfiles.git
 
