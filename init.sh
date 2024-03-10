@@ -8,11 +8,16 @@ sudo apt update
 # Set Github Username
 export GITHUB_USERNAME=maowenbrad
 
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # Install Taskfile
-sudo sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -b /usr/local/bin
+brew install task
 
 # Install Chezmoi
-sudo sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
+brew install chezmoi
 
 # Run Chezmoi init
 chezmoi init --apply $GITHUB_USERNAME
