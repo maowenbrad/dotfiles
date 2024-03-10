@@ -1,0 +1,10 @@
+# Chezmoi
+alias che='chezmoi'
+alias cha='chezmoi apply'
+alias chu='chezmoi update'
+
+# Nvim
+alias v='nvim'
+
+# Lazygit
+alias lg='lazygit'
