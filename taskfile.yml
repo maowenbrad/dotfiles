@@ -1,11 +1,14 @@
-version: '3'
+# https://taskfile.dev
+
+version: "3"
+
 
 tasks:
-  from-home:
+  zettel:open:
+    dir: ~/workspace/maowen-archive/
     cmds:
-      - pwd
-
-  from-working-directory:
-    dir: '{{.USER_WORKING_DIR}}'
+      - NVIM_APPNAME="nvim-maowen" nvim ./README.md
+  zettel:open:tasks:
+    dir: ~/workspace/maowen-archive/
     cmds:
-      - pwd
+      - NVIM_APPNAME="nvim-maowen" nvim ./TASKS.md
