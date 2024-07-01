@@ -1,0 +1,75 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+
+  login:
+    internal: true
+    cmds:
+    - cmd: aws configure set default.region us-west-2
+    - cmd: aws configure set default.output json
+    - cmd: aws configure set default.sso_region us-west-2
+    - cmd: aws configure set default.sso_start_url https://d-9267090f40.awsapps.com/start#
+    - cmd: aws configure set default.sso_account_id {{.SSO_ACCOUNT_ID}}
+    - cmd: aws configure set default.sso_role_name {{.SSO_ROLE_NAME}}
+    - cmd: aws sso login
+    - cmd: aws eks update-kubeconfig --region us-west-2 --name adp-usw2-{{.ADP_ENV}}-eks --alias {{.ADP_ENV}}
+
+  login:dev:
+    desc: Login to ADP AWS DEV Environment
+    summary: |
+      Login to AWS
+
+      This will configure your local host for AWS SSO and invoke the `aws sso` command.
+    cmds:
+    - task: login
+      vars:
+        SSO_ACCOUNT_ID: 848870117694
+        SSO_ROLE_NAME: SPLKADPUserAccess
+        ADP_ENV: dev
+
+  login:stg:
+    desc: Login to ADP AWS STG Environment
+    cmds:
+    - task: login
+      vars:
+        SSO_ACCOUNT_ID: 969268885387
+        SSO_ROLE_NAME: SPLKADPUserAccessViewOnly
+        ADP_ENV: stg
+
+  login:prod:
+    desc: Login to ADP AWS PROD Environment
+    cmds:
+    - task: login
+      vars:
+        SSO_ACCOUNT_ID: 503012550021
+        SSO_ROLE_NAME: SPLKADPUserAccessViewOnly
+        ADP_ENV: prod
+
+  login:dev:admin:
+    desc: Login to ADP AWS DEV Environment as an admin
+    cmds:
+    - task: login
+      vars:
+        SSO_ACCOUNT_ID: 848870117694
+        SSO_ROLE_NAME: SPLKADPAdministratorAccess
+        ADP_ENV: dev
+
+  login:stg:admin:
+    desc: Login to ADP AWS STG Environment as an admin
+    cmds:
+    - task: login
+      vars:
+        SSO_ACCOUNT_ID: 969268885387
+        SSO_ROLE_NAME: SPLKADPAdministratorAccess
+        ADP_ENV: stg
+
+  login:prod:admin:
+    desc: Login to ADP AWS PROD Environment as an admin
+    cmds:
+    - task: login
+      vars:
+        SSO_ACCOUNT_ID: 503012550021
+        SSO_ROLE_NAME: SPLKADPAdministratorAccess
+        ADP_ENV: prod
