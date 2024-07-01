@@ -7,7 +7,7 @@ alias wr='cd ~/workspace/repositories'
 alias wri='cd ~/workspace/repositories/it-engineering/its-adp'
 alias wrn='cd ~/workspace/repositories/notes/'
 alias c='code .'
-alias g=lazygit
+alias lg=lazygit
 alias v='nvim .'
 
 # Zellij
@@ -18,15 +18,15 @@ alias zk="zellij kill-session \$( zellij list-sessions --short | fzf )"
 alias za="zellij attach \$( zellij list-sessions --short | fzf )"
 
 # Not sure what to call these things
-alias l='eza --all -1l --icons=always'
+alias l="eza --all --oneline --long --no-user --group-directories-first --ignore-glob .git --icons=always"
 alias lt='l --tree'
 alias sd="wr && cd \$( fd --type directory --hidden --exclude .git | fzf )"
 alias cl="clear"
 alias y="yazi"
 
 # tasks
-alias t='task'
-alias tsg="task \$(task --global --list-all --silent | fzf)"
+#alias t='task'
+alias t="task \$(task --global --list-all --silent | fzf)"
 alias tsl="task \$(task --list-all --silent | fzf)"
 
 # Terraform
@@ -75,3 +75,18 @@ alias vm='NVIM_APPNAME="nvim-maowen" nvim'
 # notes
 alias n="task --global zettel:open"
 alias nt="task --global zettel:open:tasks"
+
+zellij-session ()
+{
+  local session_name
+  local session_directory
+  cd ~/workspace/repositories/
+  session_directory=$( fd --type directory --hidden --exclude .git | fzf )
+  session_name=$(basename $session_directory)
+  if [[ ! $(zellij list-sessions --short | grep $session_name) ]]; then
+    zellij attach --create-background $session_name options --default-cwd $session_directory
+  fi
+  zellij attach $session_name
+cd -
+}
+alias s=zellij-session
