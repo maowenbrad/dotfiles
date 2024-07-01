@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# brewfile hash: {{ include "brewfile" | sha256sum }}
-xargs brew install < {{ joinPath .chezmoi.sourceDir "brewfile" | quote }}
