@@ -2,8 +2,16 @@
 
 version: "3"
 
+dotenv: ['{{.HOME}}/.env']
+
+includes:
+  zellij: .config/taskfiles/zellij.taskfile.yml
+  adp: ~/workspace/repositories/cd.splunkdev.com/it-engineering/its-adp/taskfiles
 
 tasks:
+  default:
+    cmds:
+      - cmd: env
   zettel:open:
     dir: ~/workspace/maowen-archive/
     cmds:
