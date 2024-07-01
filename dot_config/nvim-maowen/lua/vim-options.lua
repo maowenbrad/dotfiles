@@ -9,6 +9,7 @@ vim.g.have_nerd_font = true
 
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.conceallevel = 1
 
 -- Navigate vim panes better
 vim.keymap.set("n", ";", ":", { noremap = true })
