@@ -1,0 +1,22 @@
+
+version: "3"
+env:
+  AOTC_WORKDIR: "{{.HOME}}/workspace/repositories/cd.splunkdev.com"
+tasks:
+  clone:
+    internal: true
+    cmds:
+    - |
+      cd {{.AOTC_WORKDIR}}
+      aotc clone --group {{.GROUP}} --workdir .
+      cd -
+  adp:extractload:
+    cmds:
+    - task: clone
+      vars:
+        GROUP: it-engineering/its-adp/extract-load
+  adp:transform:
+    cmds:
+    - task: clone
+      vars:
+        GROUP: it-engineering/its-adp/transform

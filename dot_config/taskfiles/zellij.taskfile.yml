@@ -1,0 +1,14 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+
+  open:
+    desc: Open Zellij session
+    cmds:
+    - |
+      zellij --help
+      zellij list-sessions
+      zellij attach --create-background its-adp-rbacs options --attach-to-session false --default-cwd ~/workspace/repositories/cd.splunkdev.com/it-engineering/its-adp/rbac
+      $( fd --type directory --hidden --exclude .git | fzf )
