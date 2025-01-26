@@ -1,0 +1,15 @@
+[core]
+	editor = nvim
+[pull]
+  ff = only
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[url "git@cd.splunkdev.com:"]
+	insteadOf = https://cd.splunkdev.com/
