@@ -1,0 +1,12 @@
+[".tmux/plugins/tpm"]
+    type = "git-repo"
+    url = "https://github.com/tmux-plugins/tpm"
+
+[".zsh/zsh-autosuggestions"]
+    type = "git-repo"
+    url = "https://github.com/zsh-users/zsh-autosuggestions"
+
+[".config/ghostty/shaders"]
+    type = "git-repo"
+    url = "https://github.com/m-ahdal/ghostty-shaders"
+
