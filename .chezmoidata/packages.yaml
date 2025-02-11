@@ -9,3 +9,4 @@ packages:
     - 'make'
     - 'unzip'
     - 'lazygit'
+    casks:
