@@ -1,0 +1,18 @@
+[[session]]
+name = "root"
+path = "~"
+
+[[session]]
+name = "dotfiles"
+path = "~/.local/share/chezmoi/"
+startup_command = "nvim"
+
+[[session]]
+name = "ssh-prd"
+path = "~"
+startup_command = "ssh python-prd"
+
+[[session]]
+name = "ssh-dev"
+path = "~"
+startup_command = "ssh python-dev"
