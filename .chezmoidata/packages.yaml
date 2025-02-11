@@ -2,7 +2,7 @@ packages:
   darwin:
     brews:
     - 'git'
-    - 'nvim
+    - 'nvim'
     - 'fzf'
     - 'ripgrep'
     - 'gcc'
