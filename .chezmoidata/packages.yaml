@@ -9,4 +9,9 @@ packages:
     - 'make'
     - 'unzip'
     - 'lazygit'
+    - 'yazi'
+    - 'atuin'
+    - 'zoxide'
+    - 'eza'
+    - 'oh-my-posh'
     casks:
