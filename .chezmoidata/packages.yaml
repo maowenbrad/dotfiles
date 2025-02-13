@@ -1,7 +1,11 @@
 packages:
   darwin:
+    taps:
+    - 'joshmedeski/sesh'
     brews:
-    - 'git'
+    - 'btop'
+    - 'git' # git
+    - 'git-lfs'
     - 'nvim'
     - 'fzf'
     - 'ripgrep'
@@ -14,4 +18,13 @@ packages:
     - 'zoxide'
     - 'eza'
     - 'oh-my-posh'
+    - 'tmux'
+    - 'zk'
+    - 'joshmedeski/sesh/sesh'
+    - 'bat'
+    - 'fd'
     casks:
+    - 'visual-studio-code'
+    - 'font-caskaydia-cove-nerd-font'
+    - 'nikitabobko/tap/aerospace'
+    - '1password-cli'
