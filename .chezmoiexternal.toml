@@ -10,3 +10,7 @@
     type = "git-repo"
     url = "https://github.com/m-ahdal/ghostty-shaders"
 
+[".config/btop/themes/catppuccin_mocha.theme"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme"
+    refreshPeriod = "168h"
