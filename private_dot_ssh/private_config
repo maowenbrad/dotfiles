@@ -2,5 +2,9 @@ Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
 Host github.com
-  IdentityFile ~/.ssh/github.pub
+  IdentityFile ~/.ssh/maowenbrad_ssh_key.pub
+  IdentitiesOnly yes
+
+Host cd.splunkdev.com
+  IdentityFile ~/.ssh/work_ssh_key.pub
   IdentitiesOnly yes
