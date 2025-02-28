@@ -2,6 +2,7 @@ packages:
   darwin:
     taps:
     - 'joshmedeski/sesh'
+    - 'hashicorp/tap'
     brews:
     - 'btop'
     - 'git' # git
@@ -23,6 +24,15 @@ packages:
     - 'joshmedeski/sesh/sesh'
     - 'bat'
     - 'fd'
+    - 'go'
+    - 'goreleaser'
+    - 'go-task'
+    - 'hashicorp/tap/terraform'
+    - 'hashicorp/tap/vault'
+    - 'hashicorp/tap/terraform-ls'
+    - 'helm'
+    - 'kubectl'
+    - 'poetry'
     casks:
     - 'visual-studio-code'
     - 'font-caskaydia-cove-nerd-font'
